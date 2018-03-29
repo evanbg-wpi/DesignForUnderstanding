@@ -12,12 +12,12 @@ import * as p5 from "./p5/p5";
 var csv;
 
 function preload() {
-    table = loadTable('earthquakes.csv', 'csv', 'header');
+    csv = loadTable('earthquakes.csv', 'csv', 'header');
 }
 
 function setup() {
     let table = new p5.Table();
-    table.addRow(new p5.TableRow;
+    table.addRow(new p5.TableRow)();
     //count the columns
     print( + ' total rows in table');
     print(csv.getColumnCount() + ' total columns in table');
