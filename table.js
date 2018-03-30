@@ -7,7 +7,7 @@
 // 2,Equus zebra,Zebra
 
 
-import * as p5 from "./p5/p5";
+// import table from "./p5/p5";
 
 var csv;
 
@@ -17,7 +17,7 @@ function preload() {
 
 function setup() {
     let table = new p5.Table();
-    table.addRow(new p5.TableRow)();
+    table.addRow(new p5.TableRow)(csv.getRow(0));
     //count the columns
     print( + ' total rows in table');
     print(csv.getColumnCount() + ' total columns in table');
