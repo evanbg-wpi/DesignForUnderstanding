@@ -13,10 +13,14 @@ var myMap;
 var canvas;
 
 function preload() {
-    csv = loadTable('http://127.0.0.1:8080/earthquakes.csv', 'csv', 'header');
+    console.log("we started looking at the csv");
+    csv = loadTable('data/earthquakes.csv', 'csv', 'header');
+    console.log("we finished looking at the csv");
+
 }
 
 function setup() {
+    console.log("we finished looking at the csv");
 
     canvas = createCanvas(500,520);
 
