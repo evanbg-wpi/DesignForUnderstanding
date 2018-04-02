@@ -18,10 +18,10 @@ class CSV {
 
         for (let i = 1; i < lines.length; i++) {
             let obj = {};
-            let currentline = lines[i].split(",");
-            if (filterColumnNumber === -1 || currentline[filterColumnNumber] > greaterThan) {
+            let currentLine = lines[i].split(",");
+            if (filterColumnNumber === -1 || Number(currentLine[filterColumnNumber]) > greaterThan) {
                 for (let j = 0; j < columnCount; j++) {
-                    obj[headers[j]] = currentline[j];
+                    obj[headers[j]] = currentLine[j];
                 }
                 result.push(obj);
             }
@@ -33,4 +33,4 @@ class CSV {
     }
 
 }
-
+export {CSV};
