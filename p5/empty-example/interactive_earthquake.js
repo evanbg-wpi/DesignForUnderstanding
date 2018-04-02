@@ -14,7 +14,7 @@ var canvas;
 
 function preload() {
     console.log("we started looking at the csv");
-   // csv = loadTable('http://127.0.0.1:8080/empty-example/data/earthquakes.csv', 'csv', 'header');
+    csv = loadTable('earthquakes.csv', 'csv', 'header');
     console.log("we finished looking at the csv");
 
 }
@@ -36,6 +36,7 @@ function getEarthquakes(){
 
     var LOE = {};
 
+
     //pull all earthquakes from database
 
     let result = [];
@@ -50,10 +51,7 @@ function getEarthquakes(){
         const pos = myMap.latLngToPixel(tempLat, tempLon);
 
         //let groupNum = getInnerArray(pos.x, pos.y);
-
-        obj[headers[latitude]] = tempLat;
-        obj[headers[longitude]] = tempLon;
-        obj[headers[magnitude]] = Number(csv.getString(i, 'magnitude'));
+        obj = {lat: pos.x, lng: pos.y, mag: Number(csv.getString(i, 'magnitude'))};
 
         LOE.push(obj);
         //LOE[groupNum].push(obj);
@@ -80,6 +78,8 @@ function draw(){
     clear();
     //get image of map
     var LOE = getData();
+
+    var LOE2 = getEarthquakes();
 
 
     for( var i = 0; i < LOE.length; i++){
