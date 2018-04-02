@@ -158,6 +158,26 @@ var vlSpec = {
                 }
             }
         }
+    ],
+
+    "legends": [
+        {
+            "fill": "scale_color",
+            "title": "Web Browser",
+            "orient": "right",
+            "encode": {
+                "symbols": {
+                    "enter": {
+                        "fillOpacity": {"value": 0.5}
+                    }
+                },
+                "labels": {
+                    "update": {
+                        "text": {"field": "value"}
+                    }
+                }
+            }
+        }
     ]
 };
 
